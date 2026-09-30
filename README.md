@@ -67,32 +67,21 @@ Anything else interesting — prompts, MCP servers, templates, articles, videos.
 
 ## 📥 How to Install a Skill
 
-**Download just one skill folder** — paste the folder URL (e.g. `https://github.com/SridharIyer10/CtrlAltLazy/tree/main/skills/pm/pm-resume-prep`) into [download-directory.github.io](https://download-directory.github.io/), or clone the whole repo:
+Each skill's own README has step-by-step install instructions for **Claude**, **ChatGPT** and **Gemini** on **web, desktop, mobile app and command line**, plus copy-paste prompts. Open the skill folder and follow its **Install** section:
+
+- [PM Interview Prep → Install](skills/pm/pm-interview-prep/README.md#-install)
+- [PM Resume Prep → Install](skills/pm/pm-resume-prep/README.md#-install)
+
+Quick start:
 
 ```bash
 git clone https://github.com/SridharIyer10/CtrlAltLazy.git
+cd CtrlAltLazy
+./scripts/package-skills.sh          # zips each skill into dist/ for Claude upload
+cp -r skills/pm/pm-resume-prep ~/.claude/skills/   # Claude Code
 ```
 
-### 1. Google Gemini (Gemini Advanced, Gems, Canvas)
-- **Gemini Gems:** Create a new Gem at [gemini.google.com/gems](https://gemini.google.com/gems) and paste the skill's `SKILL.md` into the Gem instructions.
-- **Gemini Chat / Canvas:** Copy and paste the `SKILL.md` directly into the chat alongside your prompt, CV, or JD. Gemini Canvas will render documents and code directly.
-
-### 2. ChatGPT (GPT-4o, Custom GPTs, Canvas)
-- **Custom GPTs:** Go to [chatgpt.com/gpts/editor](https://chatgpt.com/gpts/editor), paste `SKILL.md` into the **Instructions**, and upload any bundled reference files (e.g. `references/humanizer-patterns.md`) into Knowledge.
-- **ChatGPT Canvas / Chat:** Paste `SKILL.md` into your Custom Instructions or the active chat. ChatGPT Canvas will open and preview code/HTML outputs side-by-side.
-
-### 3. Claude (Claude.ai, Projects, Desktop, Claude Code)
-- **Claude.ai / Desktop:** 
-  1. Zip the skill folder (or run `./scripts/package-skills.sh` — zips land in `dist/`).
-  2. Go to **Settings → Capabilities → Skills → Upload skill** and pick the zip.
-  3. Or create a **Project** and paste `SKILL.md` into Project Instructions.
-- **Claude Code:**
-  ```bash
-  # personal (all projects)
-  cp -r skills/pm/pm-resume-prep ~/.claude/skills/
-  # or per project
-  cp -r skills/pm/pm-resume-prep .claude/skills/
-  ```
+Or download just one skill folder: paste its GitHub URL into [download-directory.github.io](https://download-directory.github.io/).
 
 ---
 
@@ -101,12 +90,13 @@ git clone https://github.com/SridharIyer10/CtrlAltLazy.git
 ```
 CtrlAltLazy/
 ├── README.md                 ← you are here (the index of everything)
-├── CONTRIBUTING.md           ← how to add a skill or a link
+├── CONTRIBUTING.md           ← skill rules + how to add a skill or a link
 ├── skills/
 │   ├── pm/                   ← PM Stuff
 │   │   ├── pm-interview-prep/
 │   │   │   ├── SKILL.md
-│   │   │   └── README.md
+│   │   │   ├── README.md
+│   │   │   └── assets/
 │   │   └── pm-resume-prep/
 │   │       ├── SKILL.md
 │   │       ├── README.md
@@ -118,6 +108,7 @@ CtrlAltLazy/
 ├── templates/
 │   └── skill-template/       ← copy this to start a new skill
 └── scripts/
+    ├── check-skills.sh       ← pre-deploy check (run before every push)
     └── package-skills.sh     ← zips every skill into dist/ for upload
 ```
 

@@ -17,34 +17,94 @@ Designed to run natively across **Google Gemini**, **ChatGPT**, and **Claude**.
 
 ---
 
-## 🌐 Platform Setup Guides
+## 🖼️ Output preview
 
-### 1. Claude (Claude.ai / Projects / Claude Code)
-- **Claude.ai / Desktop**: 
-  1. Package the skill using `./scripts/package-skills.sh` (or zip `skills/pm/pm-resume-prep/`).
-  2. In Claude Desktop / Claude.ai, upload the zip under **Settings → Capabilities → Skills**, OR paste `SKILL.md` into a Project's Custom Instructions.
-  3. Claude will render the final resume as an interactive **HTML Artifact** with a live visual preview and one-click print.
-- **Claude Code**:
-  ```bash
-  cp -r skills/pm/pm-resume-prep ~/.claude/skills/
-  ```
+The resume is delivered as a single-column, ATS-friendly **HTML page** (then printed to A4 PDF). This is the template it fills in — open [`assets/resume-template.html`](assets/resume-template.html) in a browser to see it live.
 
-### 2. ChatGPT (GPT-4o / Custom GPTs / Canvas)
-- **Custom GPT**:
-  1. Create a new GPT in ChatGPT.
-  2. Paste the contents of [`SKILL.md`](SKILL.md) into the **Instructions** box.
-  3. Optionally upload `references/humanizer-patterns.md` into the GPT's Knowledge files.
-- **Standard Chat / Canvas**:
-  1. Paste `SKILL.md` into the conversation or your Custom Instructions.
-  2. ChatGPT Canvas will open the HTML resume side-by-side for live review, or deliver it in a single copyable HTML code block.
+![PM Resume Prep HTML output preview](assets/preview.png)
 
-### 3. Google Gemini (Gemini Advanced / Gemini Gems / Canvas)
-- **Gemini Gem**:
-  1. Create a Gem in Google Gemini.
-  2. Paste the contents of [`SKILL.md`](SKILL.md) into the Gem's instructions.
-- **Standard Chat / Canvas**:
-  1. Paste `SKILL.md` along with your resume and target JD.
-  2. Gemini generates the assessment and outputs the complete standalone HTML in Canvas or a Markdown code block with 1-click copy.
+---
+
+## 📥 Install
+
+Pick your platform, then your device. Every path ends with the same check: **start a new chat and run the test prompt below**.
+
+> Get the files first: `git clone https://github.com/SridharIyer10/CtrlAltLazy.git`, then open `skills/pm/pm-resume-prep`. To make an upload-ready zip, run `./scripts/package-skills.sh` from the repo root (the zip lands in `dist/pm-resume-prep.zip`).
+
+### Claude
+
+| Device | Steps |
+|---|---|
+| **Web** (claude.ai) | 1. Open [claude.ai](https://claude.ai) → **Settings → Capabilities → Skills**.<br>2. Click **Upload skill** and choose `dist/pm-resume-prep.zip`.<br>3. Switch the skill **On**.<br>4. Start a new chat and run the test prompt. |
+| **Desktop** (Mac / Windows) | 1. Open the Claude desktop app → **Settings → Capabilities → Skills**.<br>2. Click **Upload skill** and choose `dist/pm-resume-prep.zip`.<br>3. Switch the skill **On**, start a new chat, and run the test prompt. |
+| **App** (iOS / Android) | 1. Upload the skill once on web or desktop (steps above). Skills are tied to your account, so it syncs to the app.<br>2. Open the Claude app, start a new chat, and run the test prompt.<br>3. No skill option? Create a **Project** on web, paste `SKILL.md` into its instructions, then open that Project in the app. |
+| **Command line** (Claude Code) | See the commands below. |
+
+```bash
+# Install for all your projects
+mkdir -p ~/.claude/skills && cp -r skills/pm/pm-resume-prep ~/.claude/skills/
+
+# Or for one project only
+mkdir -p .claude/skills && cp -r skills/pm/pm-resume-prep .claude/skills/
+
+# Run it
+claude
+```
+
+### ChatGPT
+
+| Device | Steps |
+|---|---|
+| **Web** (chatgpt.com) | 1. Open [chatgpt.com/gpts/editor](https://chatgpt.com/gpts/editor) (**Explore GPTs → Create**).<br>2. Under **Configure**, paste all of `SKILL.md` into **Instructions**.<br>3. Optional: under **Knowledge**, upload [`references/humanizer-patterns.md`](references/humanizer-patterns.md).<br>4. Click **Create**, choose **Only me**, then run the test prompt. |
+| **Desktop** (Mac / Windows) | 1. Create the GPT on the web (steps above).<br>2. Open the ChatGPT desktop app, pick your GPT from the sidebar, and run the test prompt.<br>3. No GPT access? Paste `SKILL.md` as the first message of a chat, then send the test prompt. |
+| **App** (iOS / Android) | 1. Create the GPT on the web (steps above).<br>2. Open the ChatGPT app → sidebar → your GPT, and run the test prompt.<br>3. No GPT access? Paste `SKILL.md` as the first message, then the test prompt. |
+| **Command line** (Codex CLI) | See the commands below. |
+
+```bash
+# Codex CLI reads AGENTS.md from the current folder
+cp skills/pm/pm-resume-prep/SKILL.md ./AGENTS.md
+codex "Audit my PM resume against this Senior PM JD: [paste resume and JD]"
+```
+
+### Google Gemini
+
+| Device | Steps |
+|---|---|
+| **Web** (gemini.google.com) | 1. Open [gemini.google.com/gems](https://gemini.google.com/gems) → **New Gem**.<br>2. Name it `PM Resume Prep` and paste all of `SKILL.md` into **Instructions**.<br>3. Optional: attach [`references/humanizer-patterns.md`](references/humanizer-patterns.md) in the chat.<br>4. Click **Save**, open the Gem, and run the test prompt. |
+| **Desktop** (Mac / Windows) | 1. Gemini runs in the browser on desktop. Create the Gem on the web (steps above).<br>2. Optional: in Chrome, open the address bar's install icon (or **⋮ → Cast, save and share → Install page as app**) to pin Gemini as a desktop app.<br>3. Open your Gem and run the test prompt. |
+| **App** (iOS / Android) | 1. Create the Gem on the web (steps above).<br>2. Open the Gemini app → **Gems** → your Gem, and run the test prompt.<br>3. No Gems access? Paste `SKILL.md` as the first message, then the test prompt. |
+| **Command line** (Gemini CLI) | See the commands below. |
+
+```bash
+# Gemini CLI reads GEMINI.md from the current folder
+cp skills/pm/pm-resume-prep/SKILL.md ./GEMINI.md
+gemini -p "Audit my PM resume against this Senior PM JD: [paste resume and JD]"
+```
+
+### ✅ Test prompt (all platforms)
+
+> Audit my PM resume against this Senior PM JD: [paste resume and JD]
+
+If the reply follows the steps described in [`SKILL.md`](SKILL.md), the install worked.
+
+## ⌨️ Command-line prompts
+
+Copy, edit the `[brackets]`, and paste into the CLI (or into any chat).
+
+```bash
+# Claude Code
+claude "Use the pm-resume-prep skill. Audit ./resume.pdf against the JD in ./jd.txt and write resume.html"
+
+# Codex CLI (ChatGPT)
+codex "Audit my PM resume against this JD. Resume: $(cat resume.txt) JD: $(cat jd.txt). Write resume.html"
+
+# Gemini CLI
+gemini -p "Audit my PM resume against this JD. Resume: $(cat resume.txt) JD: $(cat jd.txt). Output full HTML"
+
+# Turn the HTML into an A4 PDF (any platform)
+pip install playwright pdfplumber && playwright install chromium
+python3 skills/pm/pm-resume-prep/scripts/render_pdf.py resume.html resume.pdf
+```
 
 ---
 
@@ -85,4 +145,5 @@ python3 skills/pm/pm-resume-prep/scripts/render_pdf.py /path/to/resume.html /pat
 - [`SKILL.md`](SKILL.md) — The core multi-platform skill definition
 - [`assets/resume-template.html`](assets/resume-template.html) — Standalone ATS-friendly HTML template
 - [`references/humanizer-patterns.md`](references/humanizer-patterns.md) — Exhaustive AI-writing pattern reference
+- [`assets/preview.png`](assets/preview.png) — screenshot of the HTML output
 - [`scripts/render_pdf.py`](scripts/render_pdf.py) — Playwright A4 PDF renderer and layout validator
