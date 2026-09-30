@@ -258,7 +258,7 @@ body.quiz .body.hidden{display:none}
 (function(){
 const $=id=>document.getElementById(id);
 function esc(s){return String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-function inline(s){return esc(s).replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');}
+function inline(s){return esc(s).replace(/\*\*(.+?)\*\*/g,(m,b)=>"<strong>"+b+"</strong>").replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g,(m,t,u)=>'<a href="'+u+'" target="_blank" rel="noopener">'+t+'</a>');}
 function md(t){return String(t??"").trim().split(/\n\s*\n/).map(b=>{let o="",ul=[],tx=[];
   const fu=()=>{if(ul.length){o+="<ul>"+ul.map(l=>"<li>"+inline(l)+"</li>").join("")+"</ul>";ul=[];}};
   const ft=()=>{if(tx.length){o+="<p>"+tx.map(inline).join("<br>")+"</p>";tx=[];}};
