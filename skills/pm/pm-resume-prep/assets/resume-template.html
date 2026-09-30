@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Name - Resume</title>
+<!--
+  PM RESUME PREP - ATS-FRIENDLY UNIVERSAL TEMPLATE
+  1. Single column layout. Zero tables, text boxes, or graphics.
+  2. Experience header = 1 line in DOM order (Title - Company | Location | Dates).
+  3. Pre-calibrated A4 print CSS for 1-click browser export.
+  4. Break-inside: avoid on every article to prevent split company blocks.
+-->
+<style>
+  :root { --ink:#111; --muted:#444; --rule:#bbb; --fill:#b45309; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:40px 16px; background:#fff; color:var(--ink);
+         font-family:Arial, Helvetica, sans-serif; font-size:10.5pt; line-height:1.38; }
+  main { max-width:780px; margin:0 auto; }
+  h1 { font-size:20pt; margin:0 0 2px; }
+  .headline { font-size:11pt; font-weight:bold; margin:0 0 4px; }
+  .contact { margin:0; color:var(--muted); }
+  h2 { font-size:11.5pt; text-transform:uppercase; letter-spacing:.5px;
+       border-bottom:1px solid var(--rule); padding-bottom:3px; margin:18px 0 8px;
+       break-after:avoid; page-break-after:avoid; }
+  h3 { font-size:10.5pt; margin:10px 0 2px; break-after:avoid; }
+  .row { display:flex; justify-content:space-between; gap:16px; margin:0; }
+  .row .l { text-align:left; }
+  .row .r { text-align:right; white-space:nowrap; }
+  .role { font-weight:bold; }
+  .row .r.sub { margin-bottom:0; }
+  .sub { color:var(--muted); margin-bottom:3px; }
+  .ctx { font-style:italic; color:var(--muted); margin:2px 0 0; }
+  article { margin:0 0 10px; break-inside:avoid; page-break-inside:avoid; }
+  ul { margin:3px 0 0; padding-left:18px; }
+  li { margin-bottom:2px; }
+  p { margin:0 0 5px; }
+  .fill { color:var(--fill); font-weight:bold; }
+  @media print {
+    body { padding:0; }
+    @page { size:A4; margin:0.55in 0.6in; }
+    .fill { color:var(--ink); }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<section id="contact">
+  <h1>Full Name</h1>
+  <p class="headline">Role Level | Core AI / Domain Strengths | N Years, Scale Signal</p>
+  <p class="contact">City, Country | +00 00000 00000 | name@email.com | linkedin.com/in/handle | portfolio.com</p>
+</section>
+
+<section id="summary">
+  <h2>Summary</h2>
+  <p>Product leader with N years in domain(s), shipping product type used by N users / N clients. Led cross-functional teams of N across engineering, data science and design, delivering $ / % outcome. Deep expertise in strengths.</p>
+</section>
+
+<section id="achievements">
+  <h2>Achievements &amp; AI Applications</h2>
+  <article>
+    <h3>Key Achievements</h3>
+    <ul>
+      <li>Raised <strong>metric</strong> from <strong>baseline</strong> to <strong>result</strong> by action taken.</li>
+      <li>Delivered <strong>$ outcome / cost savings</strong> by action taken.</li>
+      <li>Scaled adoption to <strong>N active users</strong> across timeframe.</li>
+    </ul>
+  </article>
+  <article>
+    <h3>AI Applications</h3>
+    <ul>
+      <li><strong>System Name:</strong> Purpose; model &amp; stack (API/local, RAG, agents); scale; <strong>outcome metric</strong>.</li>
+      <li><strong>System Name:</strong> Purpose; model &amp; stack; scale; <strong>outcome metric</strong>.</li>
+    </ul>
+  </article>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <article>
+    <div class="row"><span class="l"><span class="role">Job Title</span> - <span class="role">Company Name</span></span><span class="r sub">City, Country | Mon YYYY - Present</span></div>
+    <p class="ctx">One-line company context: what the company does and at what scale.</p>
+    <ul>
+      <li>Accomplished <strong>X</strong>, as measured by <strong>Y</strong>, by Z.</li>
+      <li>Accomplished <strong>X</strong>, as measured by <strong>Y</strong>, by Z.</li>
+      <li>Led <strong>N</strong>-person squad; owned roadmap, technical trade-offs, and OKRs.</li>
+    </ul>
+  </article>
+  <article>
+    <div class="row"><span class="l"><span class="role">Job Title</span> - <span class="role">Company Name</span></span><span class="r sub">City, Country | Mon YYYY - Mon YYYY</span></div>
+    <ul>
+      <li>Accomplished <strong>X</strong>, as measured by <strong>Y</strong>, by Z.</li>
+      <li>Accomplished <strong>X</strong>, as measured by <strong>Y</strong>, by Z.</li>
+    </ul>
+  </article>
+</section>
+
+<section id="projects">
+  <h2>Projects &amp; Advisory</h2>
+  <article>
+    <div class="row"><span class="l role">Project or Advisory Initiative</span><span class="r role">Organization / Personal</span></div>
+    <div class="row sub"><span class="l">City, Country</span><span class="r">Mon YYYY - Mon YYYY</span></div>
+    <ul>
+      <li>Problem tackled and architecture selected; delivered <strong>measurable outcome</strong>.</li>
+    </ul>
+    <p class="ctx">Tech: Tools, models, frameworks, cloud stack</p>
+  </article>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <p><strong>AI/ML:</strong> Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Agentic Workflows, Model Evals, Prompt Engineering</p>
+  <p><strong>Product:</strong> Product Strategy, Roadmapping, Customer Discovery, Pricing &amp; Packaging, A/B Testing, OKRs, P&amp;L</p>
+  <p><strong>Tools:</strong> Jira, Figma, SQL, Amplitude, Mixpanel, Databricks, LangChain</p>
+  <p><strong>Domain:</strong> Fintech, B2B SaaS, HealthTech, Enterprise, Consumer</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <article>
+    <div class="row"><span class="l role">Degree, Major</span><span class="r role">University Name</span></div>
+    <div class="row sub"><span class="l">City, Country</span><span class="r">YYYY</span></div>
+  </article>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <ul>
+    <li>Certification Name | Issuing Body | YYYY</li>
+  </ul>
+</section>
+
+</main>
+</body>
+</html>
