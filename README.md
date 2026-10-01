@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⌃⌥ CtrlAltLazy
+# ⌃⌥ CtrlAltAI
 
 **Work smarter, not harder.** A free, open collection of AI skills, agents, repos and tools I actually use — organised so you can grab what you need and go.
 
