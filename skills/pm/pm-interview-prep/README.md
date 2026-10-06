@@ -35,7 +35,7 @@ Web search enabled, and an agent that can publish HTML (Claude artifacts). Witho
 
 Pick your platform, then your device. Every path ends with the same check: **start a new chat and run the test prompt below**.
 
-> Get the files first: `git clone https://github.com/SridharIyer10/CtrlAltLazy.git`, then open `skills/pm/pm-interview-prep`. To make an upload-ready zip, run `./scripts/package-skills.sh` from the repo root (the zip lands in `dist/pm-interview-prep.zip`).
+> Get the files first: `git clone https://github.com/SridharIyer10/CtrlAltAI.git`, then open `skills/pm/pm-interview-prep`. To make an upload-ready zip, run `./scripts/package-skills.sh` from the repo root (the zip lands in `dist/pm-interview-prep.zip`).
 
 ### Claude
 

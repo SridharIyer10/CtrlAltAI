@@ -29,7 +29,7 @@ The resume is delivered as a single-column, ATS-friendly **HTML page** (then pri
 
 Pick your platform, then your device. Every path ends with the same check: **start a new chat and run the test prompt below**.
 
-> Get the files first: `git clone https://github.com/SridharIyer10/CtrlAltLazy.git`, then open `skills/pm/pm-resume-prep`. To make an upload-ready zip, run `./scripts/package-skills.sh` from the repo root (the zip lands in `dist/pm-resume-prep.zip`).
+> Get the files first: `git clone https://github.com/SridharIyer10/CtrlAltAI.git`, then open `skills/pm/pm-resume-prep`. To make an upload-ready zip, run `./scripts/package-skills.sh` from the repo root (the zip lands in `dist/pm-resume-prep.zip`).
 
 ### Claude
 
